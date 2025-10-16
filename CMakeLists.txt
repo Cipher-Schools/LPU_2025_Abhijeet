@@ -3,4 +3,5 @@ project(Arrays)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Arrays main.cpp)
+add_executable(Arrays main.cpp
+        two_pointers.cpp)
