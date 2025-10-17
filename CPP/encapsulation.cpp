@@ -28,8 +28,20 @@ BankAccount(string name,  int amount){
     this->amount = amount ;
 }
 
-    // withdraw
-    // depostite function
+
+    // depostite function 		// withdraw
+
+    void deposit(float x){
+    this->amount+=x ;
+}
+
+    void withdraw(int x) {
+    if(x > this->amount) {
+        return ;
+    }
+
+    this->amount -= x;
+}
 
 
 
