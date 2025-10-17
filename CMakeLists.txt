@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Arrays DSA/main.cpp
         DSA/two_pointers.cpp
-        CPP/oops.cpp)
+        CPP/oops.cpp
+        DSA/rotate_array.cpp)
