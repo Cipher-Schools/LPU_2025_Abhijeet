@@ -13,7 +13,6 @@ public:
         this->amount = amount;
     }
 
-
     string get_name() {
         return this->name;
     }
@@ -31,23 +30,36 @@ public:
         this->amount = amount;
     }
 
-    // Common behaviors
+
     void deposit(float x) {
         this->amount += x;
         cout << x << " deposited successfully. New balance: " << this->amount << endl;
     }
 
-    virtual void withdraw(float x) {
+    void withdraw(float x) {
         if (x > this->amount) {
-            cout << "Insufficient balance!" << endl;
+            cout << " Insufficient balance!" << endl;
             return;
         }
         this->amount -= x;
         cout << x << " withdrawn successfully. Remaining balance: " << this->amount << endl;
     }
 
-    // Display account info
-    virtual void display() {
+    // function Overloading ,  compile time polymorphisum
+
+    void withdraw(float x , float tax){
+        float total = x + tax ;
+        if(total > this->amount){
+            cout << " Insufficient balance!" << endl;
+            return;
+        }
+
+          this->amount -= total;
+        cout << total << " withdrawn successfully. Remaining balance: " << this->amount << endl;
+    }
+
+
+      void display() {
         cout << "Account Holder: " << name << " | Balance: " << amount << endl;
     }
 };
@@ -66,14 +78,10 @@ public:
     void addInterest() {
         float interest = (get_amount() * interestRate) / 100;
         set_amount(get_amount() + interest);
-        cout << "Interest of " << interest << " added. New balance: " << get_amount() << endl;
+        cout << " Interest of " << interest << " added. New balance: " << get_amount() << endl;
     }
 
-    void display() override {
-        cout << "Savings Account - Holder: " << get_name()
-             << " | Balance: " << get_amount()
-             << " | Interest Rate: " << interestRate << "%" << endl;
-    }
+
 };
 
 
@@ -85,50 +93,50 @@ public:
     CurrentAccount(string name, float amount)
         : BankAccount(name, amount) {}
 
-    void withdraw(float x) override {
+    // function overriding
+    // run time polymorphisum
+    void withdraw(float x) {
+        cout<<"withdraw of the child class current Account";
         float total = x + transactionFee;
         if (total > get_amount()) {
-            cout << " Insufficient balance (including fee)!" << endl;
+            cout << "Insufficient balance (including fee)!" << endl;
             return;
         }
         set_amount(get_amount() - total);
-        cout << " Withdrawn: " << x << " + Fee: " << transactionFee
+        cout << "Withdrawn: " << x << " + Fee: " << transactionFee
              << " | Remaining: " << get_amount() << endl;
     }
 
-    void display() override {
-        cout << " Current Account - Holder: " << get_name()
-             << " | Balance: " << get_amount()
-             << " | Fee: ₹" << transactionFee << " per withdrawal" << endl;
-    }
+
 };
 
 
 int main() {
-    cout << "=== Encapsulation + Inheritance Example ===\n\n";
 
-    BankAccount base("John Doe", 5000);
+
+    BankAccount base("A", 5000);
     base.deposit(1000);
     base.withdraw(2000);
-    base.display();
+    base.withdraw(500 , 20);
+    base.display() ;
 
-    cout << "\n-------------------------\n";
+    SavingsAccount a1("B" , 5000 , 8) ;
+    CurrentAccount b1("C" , 5000) ;
 
-
-    SavingsAccount s("Alice", 8000, 5.0);
-    s.display();
-    s.addInterest();  // custom feature
-    s.withdraw(1000); // uses base withdraw
-    s.display();
-
-    cout << "\n-------------------------\n";
+    // common behvoir using function from base class
+    a1.deposit(1000) ;
+    b1.deposit(2000) ;
 
 
-    CurrentAccount c("Bob", 6000);
-    c.display();
-    c.withdraw(2000);
-    c.display();
+    a1.display();
+    b1.display();
 
-    cout << "\n=========================\n";
+    b1.withdraw(500) ;
+
+
+
+
+
+
     return 0;
 }
