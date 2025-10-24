@@ -36,7 +36,8 @@ public:
         cout << x << " deposited successfully. New balance: " << this->amount << endl;
     }
 
-    void withdraw(float x) {
+   virtual  void withdraw(float x) {
+        cout<<"withdraw of parent class"<<endl;
         if (x > this->amount) {
             cout << " Insufficient balance!" << endl;
             return;
@@ -132,6 +133,11 @@ int main() {
     b1.display();
 
     b1.withdraw(500) ;
+
+    // example of dyanmic binding in cpp
+    BankAccount*c1 = new CurrentAccount("binding" , 5000) ;
+    c1->display();
+    c1->withdraw(1000) ;
 
 
 
