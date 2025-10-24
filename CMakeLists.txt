@@ -7,4 +7,5 @@ add_executable(Arrays DSA/main.cpp
         DSA/two_pointers.cpp
         CPP/oops.cpp
         DSA/rotate_array.cpp
-        CPP/inhertance.cpp)
+        CPP/inhertance.cpp
+        DSA/prefix.cpp)
