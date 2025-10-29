@@ -9,4 +9,6 @@ add_executable(Arrays DSA/main.cpp
         DSA/rotate_array.cpp
         CPP/inhertance.cpp
         DSA/prefix.cpp
-        CPP/abstraction.cpp)
+        CPP/abstraction.cpp
+        CPP/lec_string.cpp
+        DSA/linkedlist.cpp)
