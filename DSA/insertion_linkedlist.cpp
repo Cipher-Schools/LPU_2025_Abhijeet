@@ -32,6 +32,27 @@ Node * insert_at_tail(int val , Node * head){
     return head ;
 }
 
+Node * insert_at_middle(int val , int target , Node * head){
+
+    Node * t1 = head ;
+    while (t1 != nullptr){
+        if (t1->val == target){
+            break ;
+        }
+        t1 = t1->next ;
+    }
+    Node *  t2 = t1->next ;
+
+    Node * n1 = new Node() ;
+    n1->val = val ;
+    n1->next  = t2 ;
+    t1->next = n1 ;
+
+
+    return head ;
+
+}
+
 void print(Node * head){
 
     Node * temp = head ;
@@ -50,6 +71,9 @@ int main() {
     head =  insert_at_tail(50 , head) ;
     head =  insert_at_tail(60 , head) ;
     head =  insert_at_tail(70 , head) ;
+
+    head = insert_at_middle(45 , 40 , head) ;
+    head = insert_at_middle(100 , 60 , head) ;
 
     print(head) ;
 
