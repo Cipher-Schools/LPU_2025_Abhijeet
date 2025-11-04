@@ -12,4 +12,5 @@ add_executable(Arrays DSA/main.cpp
         CPP/abstraction.cpp
         CPP/lec_string.cpp
         DSA/linkedlist.cpp
-        DSA/insertion_linkedlist.cpp)
+        DSA/insertion_linkedlist.cpp
+        DSA/lc707.cpp)
