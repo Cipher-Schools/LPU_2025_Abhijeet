@@ -14,4 +14,5 @@ add_executable(Arrays DSA/main.cpp
         DSA/linkedlist.cpp
         DSA/insertion_linkedlist.cpp
         DSA/lc707.cpp
-        CPP/stl.cpp)
+        CPP/stl.cpp
+        DSA/doublly_linkedlist.cpp)
