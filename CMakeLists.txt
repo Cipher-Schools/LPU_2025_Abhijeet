@@ -16,4 +16,5 @@ add_executable(Arrays DSA/main.cpp
         DSA/lc707.cpp
         CPP/stl.cpp
         DSA/doublly_linkedlist.cpp
-        CPP/2d_array.cpp)
+        CPP/2d_array.cpp
+        CPP/operator_overloading.cpp)
