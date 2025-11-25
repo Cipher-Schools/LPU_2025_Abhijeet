@@ -21,4 +21,5 @@ add_executable(Arrays DSA/main.cpp
         DSA/stack.cpp
         CPP/custom_stl.cpp
         CPP/custom_stl.h
-        DSA/queue.cpp)
+        DSA/queue.cpp
+        CPP/OOPS_example.cpp)
