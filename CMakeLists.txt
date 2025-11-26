@@ -23,4 +23,5 @@ add_executable(Arrays DSA/main.cpp
         CPP/custom_stl.h
         DSA/queue.cpp
         CPP/OOPS_example.cpp
-        DSA/deque_DLL.cpp)
+        DSA/deque_DLL.cpp
+        DSA/PriorityQueue.cpp)
